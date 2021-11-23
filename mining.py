@@ -25,16 +25,19 @@ def mining():
 				new =input("Start Mining? Y/N: ")
 				if new == "y":
 					print("Please wait a sec...")
-					os.system("sudo apt install git build-essential cmake libuv1-dev libssl-dev libhwloc-dev -y")
-					try:
-						os.system("git clone https://github.com/xmrig/xmrig.git")
-					except Exception:
-						print("git not install")
-						install = str(input("Install?: Y/N"))
-						if install == "Y":
-							os.system("apt-get install git")
-						else:
-							break
+					file = str(input("intsall cmake libuv1 y/n: "))
+					if file == "y":
+						os.system("sudo apt install git build-essential cmake libuv1-dev libssl-dev libhwloc-dev -y")
+					else:
+						try:
+							os.system("git clone https://github.com/xmrig/xmrig.git")
+						except Exception:
+							print("git not install")
+							install = str(input("Install?: Y/N"))
+							if install == "Y":
+								os.system("apt-get install git")
+							else:
+								break
 						
 
 
